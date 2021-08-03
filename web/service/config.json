@@ -20,6 +20,13 @@
   ],
   "outbounds": [
     {
+      "tag": "IP6_out",
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIPv6"
+      }
+    },
+    {
       "protocol": "freedom",
       "settings": {}
     },
@@ -37,6 +44,13 @@
   },
   "routing": {
     "rules": [
+      {
+        "type": "field",
+        "outboundTag": "IP6_out",
+        "domain": [
+          "geosite:netflix"
+        ]
+      },
       {
         "inboundTag": [
           "api"
